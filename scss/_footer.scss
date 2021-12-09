@@ -1,0 +1,35 @@
+.footer {
+    text-align: center;
+    padding: 50px 0;
+    // .footer__content
+
+    &__content {}
+
+    // .footer__social
+
+    &__social {
+        margin: 0 0 26px 0;
+        
+    }
+
+    // .footer__copy
+
+    &__copy {
+        font-family: Heebo;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21 / 14 * 100%;
+        color: #21243D;
+    }
+}
+
+
+
+.social {
+
+    // .social__item
+    
+    &__item {
+        margin: 0 17.5px;
+    }
+}

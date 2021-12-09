@@ -1,0 +1,126 @@
+.header_wrap {
+    max-width: 1052px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.list {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    height: 70px;
+    align-items: center;
+    padding: 10px 0;
+    margin: 0;
+
+}
+
+.list_link {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    font-family: Heebo;
+
+    @media (min-width: $md2) {
+        &:hover {
+            color: #FF6464;
+            border-bottom: solid 1px #FF6464;
+            transition: 0.3s ease;
+        }
+    }
+
+    margin: 0 0 0 40px;
+
+}
+
+.menu_burger {
+    display: none;
+}
+
+@media (max-width: 800px) {
+
+    .header_wrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 70px;
+        padding: 0 10px 0 10px;
+
+    }
+
+    .list {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        top: -100%;
+        background: rgba(205, 214, 219, 0.8);
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        transform: translateY(-100%);
+        transition: transform 1s;
+        z-index: 2;
+
+    }
+
+    .list.active {
+        transform: translateY(100%);
+    }
+
+
+    .list_link {
+        font-size: 2.5rem;
+        margin: 20px 0 20px 0;
+        letter-spacing: 2px;
+        font-family: Heebo, sans-serif;
+    }
+
+    .menu_burger {
+        display: block;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .menu_burger {
+        span {
+            width: 30px;
+            height: 3px;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            background-color: black;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            transition: ease 0.5s;
+        }
+    }
+
+    .menu_burger span:nth-of-type(2) {
+        top: calc(50% - 5px);
+    }
+
+    .menu_burger span:nth-of-type(3) {
+        top: calc(50% + 5px);
+    }
+
+    .menu_burger.active span:first-of-type {
+        transform: translateX(100%);
+    }
+
+    .menu_burger.active span:nth-of-type(2) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+
+    }
+
+    .menu_burger.active span:nth-of-type(3) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+
+    }
+}
